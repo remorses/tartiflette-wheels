@@ -1,12 +1,10 @@
-FROM python:3.7.4
+FROM python:3.7.4-alpine
 
-RUN apt-get update && apt-get install -y cmake bison flex git jq
+RUN apk add --no-cache build-base libffi-dev openssl-dev
 
-ENV PYTHONPATH=/usr/src/app/
+RUN pip install --index-url  https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple tartiflette-test-with-wheels
 
-WORKDIR /usr/src/app
+COPY tt_test.py /tt_test.py
 
-COPY . /usr/src/app/
+RUN python /tt_test.py
 
-RUN make init
-RUN pip install -e .[test]

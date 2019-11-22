@@ -52,11 +52,7 @@ jobs:
         # os: [ubuntu-18.04]
     steps:
     - uses: actions/checkout@v1
-      with:
-        submodules: true
-    - run: sudo apt-get install -y tree && tree
     - run: make init
-    - run: tree
     - uses: actions/setup-python@v1
       name: Install Python ${{ matrix.python_version }}
       with:
