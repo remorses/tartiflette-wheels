@@ -59,7 +59,7 @@ jobs:
       if: matrix.os == 'ubuntu-18.04'
     - run: choco install winflexbison3
       if: matrix.os == 'windows-latest'
-    - run: sudo brew install cmake flex bison@3.4
+    - run: brew install cmake flex bison@3.4
       if: matrix.os == 'macos-latest'
     - run: cd tartiflette
     - run: pip install cibuildwheel
