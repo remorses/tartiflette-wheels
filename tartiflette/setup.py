@@ -71,7 +71,7 @@ def _read_file(filename):
 
 
 setup(
-    name="tartiflette",
+    name="tartiflette-test-with-wheels",
     version=_VERSION,
     description="GraphQL Engine for Python",
     long_description=_read_file("README.md"),
