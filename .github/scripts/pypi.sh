@@ -26,6 +26,7 @@ check_if_setup_file_exists() {
 upload_package() {
 	python setup.py sdist
     cibuildwheel --output-dir dist
+    echo LS
     ls dist
 	twine upload --skip-existing dist/*
 }
