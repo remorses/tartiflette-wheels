@@ -25,7 +25,7 @@ check_if_setup_file_exists() {
 }
 
 upload_package() {
-	python setup.py sdist bdist_wheel
+	python setup.py bdist_wheel
     # cibuildwheel --output-dir dist
     echo listing_files
     ls dist

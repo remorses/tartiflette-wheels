@@ -62,7 +62,7 @@ jobs:
     - run: brew install cmake flex bison@3.4
       if: matrix.os == 'macos-latest'
     - run: pip install -U cibuildwheel twine wheel
-    - run: cd tartiflette && bash ../.github/scripts/pypi.sh
+    - run: cd tartiflette && pwd && bash ../.github/scripts/pypi.sh
       shell: bash
       env:
         TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
