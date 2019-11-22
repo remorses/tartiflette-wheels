@@ -63,7 +63,8 @@ jobs:
       if: matrix.os == 'macos-latest'
     - run: cd tartiflette
     - run: pip install cibuildwheel
-    - run: bash ../.github/scripts/pypi.sh
+    - run: cd tartiflette && bash ../.github/scripts/pypi.sh
+      shell: bash
       env:
         TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
