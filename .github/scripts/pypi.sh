@@ -1,11 +1,11 @@
 #!/bin/bash
 set -ex
 
-# if [ -d "./libgraphqlparser/libgraphqlparser*" ]; then
-# 	rm -rf "./libgraphqlparser/libgraphqlparser*"
-# fi
+if [ -d "./libgraphqlparser/libgraphqlparser*" ]; then
+	rm -rf "./libgraphqlparser/libgraphqlparser*"
+fi
 
-# make init
+make init
 
 set_version_if_not_master() {
 	cat /github/workflow/event.json | jq -e '. | select(.ref=="refs/heads/master")'
@@ -25,8 +25,8 @@ check_if_setup_file_exists() {
 }
 
 upload_package() {
-	python setup.py bdist_wheel
-    # cibuildwheel --output-dir dist
+	python setup.py sdist # bdist_wheel
+    cibuildwheel --output-dir dist
     echo listing_files
     ls dist
 	twine upload --skip-existing dist/*
