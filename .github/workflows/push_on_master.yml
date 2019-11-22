@@ -55,11 +55,11 @@ jobs:
       name: Install Python ${{ matrix.python_version }}
       with:
         python-version: "3.7"
-    - run: apt-get update && apt-get install -y cmake bison flex git jq
+    - run: sudo apt-get update && sudo apt-get install -y cmake bison flex git jq
       if: matrix.os == 'ubuntu-18.04'
     - run: choco install winflexbison3
       if: matrix.os == 'windows-latest'
-    - run: brew install cmake flex bison@3.4
+    - run: sudo brew install cmake flex bison@3.4
       if: matrix.os == 'macos-latest'
     - run: cd tartiflette
     - run: pip install cibuildwheel
