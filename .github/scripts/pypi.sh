@@ -1,9 +1,9 @@
 #!/bin/bash
 set -ex
 
-if [ -d "./libgraphqlparser/libgraphqlparser*" ]; then
-	rm -rf "./libgraphqlparser/libgraphqlparser*"
-fi
+# if [ -d "./libgraphqlparser/libgraphqlparser*" ]; then
+# 	rm -rf "./libgraphqlparser/libgraphqlparser*"
+# fi
 
 # make init
 
