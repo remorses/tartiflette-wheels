@@ -27,7 +27,7 @@ upload_package() {
 	python setup.py sdist
     cibuildwheel --output-dir dist
     ls dist
-	twine upload dist/*
+	twine upload --skip-existing dist/*
 }
 
 set_version_if_not_master
