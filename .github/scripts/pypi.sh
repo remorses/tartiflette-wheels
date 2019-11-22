@@ -1,11 +1,11 @@
 #!/bin/bash
 set -ex
 
-if [ -d "./libgraphqlparser" ]; then
-	rm -rf ./libgraphqlparser
-fi
+# if [ -d "./libgraphqlparser" ]; then
+# 	rm -rf ./libgraphqlparser
+# fi
 
-make init
+# make init
 
 set_version_if_not_master() {
 	cat /github/workflow/event.json | jq -e '. | select(.ref=="refs/heads/master")'
