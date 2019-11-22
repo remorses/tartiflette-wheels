@@ -68,7 +68,7 @@ jobs:
     - run: brew install cmake flex bison@3.4 &&  echo 'export PATH="/usr/local/opt/flex/bin:$PATH"' >> ~/.bash_profile && . ~/.bash_profile
       if: matrix.os == 'macos-latest'
     - run: pip install -U cibuildwheel twine wheel
-    - run: pwd && bash ../.github/scripts/pypi.sh
+    - run: pwd && bash ./.github/scripts/pypi.sh
       shell: bash
       env:
         TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
