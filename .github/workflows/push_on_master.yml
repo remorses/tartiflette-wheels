@@ -54,7 +54,7 @@ jobs:
     - uses: actions/checkout@v1
       with:
         submodules: true
-    - run: apt install tree && tree
+    - run: sudo apt-get install -y tree && tree
     - uses: actions/setup-python@v1
       name: Install Python ${{ matrix.python_version }}
       with:
