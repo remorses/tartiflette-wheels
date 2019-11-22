@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 if [ -d "./libgraphqlparser" ]; then
 	rm -rf ./libgraphqlparser
